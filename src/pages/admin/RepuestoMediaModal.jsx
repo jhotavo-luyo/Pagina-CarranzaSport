@@ -14,7 +14,7 @@ import {
     updateRepuestoVideo,
     deleteRepuestoVideo,
     createRepuestoVideo,
-} from '../../api/repuestovideosApi';
+} from '../../api/repuestoVideosApi';
 import Modal from '../../components/ui/Modal';
 import LoadingSpinner from '../../components/ui/LoadingSpinner';
 import ConfirmationModal from '../../components/ui/ConfirmationModal';
