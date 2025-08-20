@@ -7,7 +7,7 @@ import { MagnifyingGlassIcon, TagIcon, CurrencyDollarIcon, XMarkIcon, ChevronLef
 import { getPublicRepuestos } from '../../api/repuestosApi';
 import { getPublicRepuestoCategories } from '../../api/categoriaRepuestosApi';
 import { getPublicRepuestoImagenes } from '../../api/repuestoImagenesApi';
-import { getPublicRepuestoVideos } from '../../api/repuestovideosApi';
+import { getPublicRepuestoVideos } from '../../api/repuestoVideosApi'; // CORREGIDO: El nombre del archivo es sensible a mayúsculas
 import { createPublicaSolicitud } from '../../api/solicitudesApi';
 import ContactFormModal from './ContactFormModal'; // Importar el nuevo modal de contacto
 
