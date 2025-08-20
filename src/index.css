@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme{
+    --color-roljojsd: hsl(0,78%,62%);
+    --color-Cyan: hsl(180,62%,55%);
+    --color-Orange: hsl(34,97%,64%);
+    --color-Blue: hsl(212,86%,64%);
+    --color-Grey-500: hsl(234,12%,34%);
+    --color-Grey-400: hsl(212,6%,44%);
+    --color-white: hsl(0,0%,100%);
+}
+
+/* ./////////////////////////////////////////////////////////// */
+/* .//// fondo /////////////////////////////////////////////////// */
+/* ./////////////////////////////////////////////////////////// */
+/* aqui aabajo va la las animaciones de todo el proyecto */
+/* Definición de la animación para mover el gradiente radial */
+/* Definición de la animación para mover los múltiples gradientes radiales */
+@keyframes move-radial-gradient {
+    0% {
+        /* Posición inicial para el primer gradiente (arriba-izquierda), y para el segundo (abajo-derecha) */
+        background-position: 10% 10%, 90% 90%;
+    }
+    25% {
+        /* Primer punto intermedio: el primero se mueve a la derecha, el segundo a la izquierda */
+        background-position: 80% 15%, 15% 80%;
+    }
+    50% {
+        /* Segundo punto intermedio: el primero a abajo-derecha, el segundo a arriba-izquierda */
+        background-position: 85% 85%, 10% 10%;
+    }
+    75% {
+        /* Tercer punto intermedio: el primero a abajo-izquierda, el segundo a arriba-derecha */
+        background-position: 15% 80%, 80% 15%;
+    }
+    100% {
+        /* Vuelve a la posición inicial para un bucle suave */
+        background-position: 10% 10%, 90% 90%;
+    }
+}
+
+/* Clase de utilidad para aplicar la animación y definir los múltiples gradientes */
+.animate-radial-move {
+    /* Define los dos gradientes radiales. No especificamos 'at' aquí, ya que background-position lo manejará. */
+    /* Se desvanecen a 'transparent' para que se vean sobre el 'bg-black' del div */
+    background-image:
+        radial-gradient(circle, #011d3988 0%, transparent 80%), /* Primer gradiente: azul oscuro a transparente */
+        radial-gradient(circle, #f93e0032 0%, transparent 40%); /* Segundo gradiente: un azul más claro a transparente */
+    
+    /* Define el tamaño de cada gradiente. Aseguramos que sean grandes y distintos. */
+    background-size: 200% 200%, 200% 200%; 
+    
+    /* Aplica la animación: nombre, duración, función de tiempo, repetición y dirección */
+    animation: move-radial-gradient 30s ease-in-out infinite; /* Duración aumentada para un movimiento más suave */
+
+    /* Importante: Asegura que los gradientes no se repitan y se comporten como "manchas" individuales */
+    background-repeat: no-repeat; /* Esto aplica a todos los backgrounds si solo se da un valor */
+}
+
+
+
+
+/* ./////////////////////////////////////////////////////////// */
+/* .//// Team Card 3D ///////////////////////////////////////// */
+/* ./////////////////////////////////////////////////////////// */
+.team-card {
+    transform-style: preserve-3d;
+}
+
+.team-card:hover .team-card-spotlight {
+    opacity: 1;
+}
+
+.team-card-spotlight {
+    background: radial-gradient(circle at var(--spotlight-x) var(--spotlight-y), rgba(255, 255, 255, 0.15), transparent 35%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+
+/*
+      Estilos personalizados para la tarjeta volteable.
+      Tailwind no tiene utilidades directas para 'transform-style' o 'backface-visibility',
+      así que los definimos aquí.
+    */.flip-card {
+        perspective: 1500px; /* Aumenta la perspectiva para un efecto 3D más sutil */
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .flip-card:hover {
+        transform: translateY(-10px); /* Eleva la tarjeta al pasar el ratón */
+    }
+
+    .flip-card-inner {
+      transform-style: preserve-3d; /* Permite que los elementos hijos se posicionen en 3D */
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición más elástica */
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg); /* Voltea la tarjeta 180 grados en el eje Y al hacer hover */
+    }
+
+    .flip-card-front, .flip-card-back {
+      backface-visibility: hidden; /* Oculta la parte trasera del elemento cuando está volteado */
+      position: absolute; /* Posiciona ambas caras en el mismo lugar */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex; /* Para centrar contenido */
+      flex-direction: column; /* Para apilar contenido verticalmente */
+      justify-content: center; /* Centra verticalmente */
+      align-items: center; /* Centra horizontalmente */
+      border-radius: 1rem; /* Bordes redondeados */
+      padding: 1.5rem; /* Espaciado interno */
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg); /* Voltea la parte trasera inicialmente para que esté oculta */
+    }
+
+    /* ./////////////////////////////////////////////////////////// */
+/* .//// modal /////////////////////////////////////////////////// */
+/* ./////////////////////////////////////////////////////////// */
+/* Añadi estas clases para la animación del modal de multimedia */
+@layer utilities {
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .animate-scaleIn {
+    animation: scaleIn 0.2s ease-out forwards;
+  }
+}
