@@ -228,8 +228,8 @@ const PromocionesPage = () => {
     );
 
     return (
-        <div className="bg-black text-white min-h-screen p-4 sm:p-8 animate-radial-move overflow-x-hidden">
-            <div className="container mx-auto">
+        <div className="bg-black text-white min-h-screen p-4 sm:p-8 animate-radial-move overflow-x-hidden ">
+            <div className="container mx-auto pt-18">
                 {/* --- Cabecera y Buscador --- */}
                 <header className="text-center mb-12">
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">

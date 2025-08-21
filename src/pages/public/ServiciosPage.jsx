@@ -307,7 +307,7 @@ const ServiciosPage = () =>{
                 <title>Nuestros Servicios de Taller - Motosport Carranza</title>
                 <meta name="description" content="Descubre nuestros servicios de taller para motos: mantenimiento preventivo, correctivo, diagnóstico y más. ¡Agenda tu cita con nuestros expertos!" />
             </>
-            <div className="container mx-auto">
+            <div className="container mx-auto pt-18">
                 <header className="text-center mb-12">
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">Nuestros Servicios</h1>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">Desde mantenimiento de rutina hasta reparaciones complejas, nuestro equipo de expertos está listo para ayudarte.</p>

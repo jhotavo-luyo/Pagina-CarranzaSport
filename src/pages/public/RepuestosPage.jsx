@@ -89,7 +89,7 @@ const RepuestoModal = ({ repuesto, onClose, onContact }) => {
     const activeMedia = mediaItems[activeMediaIndex];
 
     return ReactDOM.createPortal(
-        <div className="fixed inset-0 bg-[#00000022] bg-opacity-75 flex justify-center items-center z-50 p-4 animate-fadeIn" onClick={onClose}>
+        <div className="fixed inset-0 bg-[#00000022] bg-opacity-75 flex justify-center items-center z-50 p-4 animate-fadeIn " onClick={onClose}>
             <div className="bg-gray-900 rounded-lg shadow-2xl max-w-2xl w-full overflow-hidden" onClick={e => e.stopPropagation()}>
                 <div className="relative">
                     {/* Visor Principal */}
@@ -332,12 +332,12 @@ const RepuestosPage = () => {
     };
 
     return (
-        <div className="bg-[#000000] text-white min-h-screen p-4 sm:p-8 animate-radial-move overflow-x-hidden">
+        <div className="bg-[#000000] text-white min-h-screen p-4 sm:p-8 animate-radial-move overflow-x-hidden ">
             <>
                 <title>Catálogo de Repuestos - Motosport Carranza</title>
                 <meta name="description" content="Explora nuestro amplio catálogo de repuestos para motos. Encuentra piezas originales y de alta calidad para todas las marcas y modelos. ¡Compra con confianza!" />
             </>
-            <div className="container mx-auto">
+            <div className="container mx-auto pt-18">
                 <header className="text-center mb-12">
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">Catálogo de Repuestos</h1>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">Encuentra la pieza perfecta para tu moto. Calidad y durabilidad garantizadas.</p>
