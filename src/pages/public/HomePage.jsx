@@ -334,7 +334,7 @@ const HomePage = () => {
         <section id="hero" className="mt-8 mb-8 flex flex-col lg:flex-row justify-center items-center gap-8 min-h-[78vh] lg:min-h-[80vh]">
             <div className='text-center lg:text-left lg:w-1/2'>
                 <h2 className="text-4xl text-center md:text-5xl lg:text-6xl font-bold text-gray-100 mb-4">¡Bienvenido a <br /> Motosport Carranza!</h2>
-                <p className='text-xl text-center md:text-2xl font-extralight text-gray-300 mt-4 mb-8'>Perfección en cada servicio, <br /> excelencia en cada repuesto.</p>
+                <p className='text-xl text-center md:text-2xl font-extralight text-gray-300 mt-4 mb-8'>Excelencia en cada servicio, <br /> Calidad en cada repuesto.</p>
                 <div className="relative group">
                     <div className="relative w-52 h-14 m-auto opacity-90 overflow-hidden rounded-xl bg-black z-10">
                         <div className="absolute z-10 -translate-x-44 group-hover:translate-x-[30rem] ease-in transition-all duration-700 h-full w-44 bg-gradient-to-r from-gray-500 to-white/10 opacity-30 -skew-x-12"></div>
