@@ -331,7 +331,7 @@ const HomePage = () => {
         {/* ========================================================================================== */}
         {/* SECCIÓN 01: HÉROE (TITULAR Y MODELO 3D CON MODEL-VIEWER) */}
         {/* ========================================================================================== */}
-        <section id="hero" className="mt-8 mb-8 flex flex-col lg:flex-row justify-center items-center gap-8 min-h-[78vh] lg:min-h-[80vh]">
+        <section id="hero" className="mt-10 mb-8 flex flex-col lg:flex-row justify-center items-center gap-8 min-h-[78vh] lg:min-h-[80vh]">
             <div className='text-center lg:text-left lg:w-1/2'>
                 <h2 className="text-4xl text-center md:text-5xl lg:text-6xl font-bold text-gray-100 mb-4">¡Bienvenido a <br /> Motosport Carranza!</h2>
                 <p className='text-xl text-center md:text-2xl font-extralight text-gray-300 mt-4 mb-8'>Excelencia en cada servicio, <br /> Calidad en cada repuesto.</p>
