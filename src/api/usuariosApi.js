@@ -1,6 +1,6 @@
 // src/api/usuariosApi.js
 // Centraliza las llamadas a la API para la gestión de usuarios.
-const API_BASE_URL = 'http://localhost:3033/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3033/api'; //! modificado para el deploy
 
 const getAuthToken = () => {
     // Asegura que siempre devuelva un string, incluso si es null
@@ -47,7 +47,8 @@ export const getAllUsuarios = async (nombre = '', page = 1, limit = 10) => {
     const params = new URLSearchParams();
 
     if (nombre) {
-        params.append('BuscarUsuario', nombre); // Usa el parámetro de búsqueda de tu backend
+        // params.append('BuscarUsuario', nombre); // Usa el parámetro de búsqueda de tu backend
+        params.append('search', nombre); // CORREGIDO: Usa el parámetro 'search' que espera el backend
     }
     // Añade parámetros de paginación
     params.append('page', page);
