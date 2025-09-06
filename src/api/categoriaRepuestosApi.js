@@ -24,21 +24,6 @@ const handleResponse = async (response) => {
     return response.json();
 };
 
-// NUEVO: Manejador de respuestas para rutas PÚBLICAS
-const handlePublicResponse = async (response) => {
-    if (!response.ok) {
-        // Para rutas públicas, no redirigimos, solo mostramos el error.
-        // Usamos .catch() por si la respuesta de error no es un JSON válido (ej. un 404 de HTML).
-        const errorData = await response.json().catch(() => ({ message: `Error ${response.status}: ${response.statusText}` }));
-        throw new Error(errorData.message || `Error ${response.status}: Algo salió mal en la API.`);
-    }
-    if (response.status === 204) {
-        // Si no hay contenido, devolvemos un array vacío, que es lo que se espera.
-        return [];
-    }
-    return response.json();
-};
-
 // =============================================================================
 // Funciones para la API de Categorías de Repuestos
 // =============================================================================
@@ -148,7 +133,6 @@ export const getPublicRepuestoCategories = async () => {
             headers: { 'Content-Type': 'application/json' },
         });
         return handleResponse(response);
-        return handlePublicResponse(response); // Usar el manejador de respuestas público
     } catch (error) {
         console.error('Error al obtener categorías de repuestos públicas:', error);
         throw error;

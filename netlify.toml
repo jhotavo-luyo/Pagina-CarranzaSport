@@ -1,0 +1,7 @@
+# netlify.toml
+
+# Configuración de redirecciones y reescrituras
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
