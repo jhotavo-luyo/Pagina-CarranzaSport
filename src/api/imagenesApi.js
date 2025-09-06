@@ -1,7 +1,8 @@
 // src/api/imagenesApi.js
 // Centraliza las llamadas a la API para la gestión de imágenes.
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3033/api'; //! modificado para el deploy
+// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3033/api'; //! modificado para el deploy
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const getAuthToken = () => {
     return localStorage.getItem('jwt_token');
