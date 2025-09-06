@@ -2,8 +2,7 @@
 // Centraliza las llamadas a la API para la gestión de repuestos y categorías de repuestos.
 
 // Lee la URL base de la API desde las variables de entorno de Vite.
-// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3033/api'; //! modificado para el deploy 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3033/api'; //! modificado para el deploy 
 
 const getAuthToken = () => {
     return localStorage.getItem('jwt_token');
