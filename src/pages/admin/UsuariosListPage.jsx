@@ -34,19 +34,6 @@ const UsuariosListPage = () => {
     // Crea una referencia para el input de búsqueda
     const searchInputRef = useRef(null); // Inicializa la referencia a null
 
-    // Efecto para implementar el debouncing en la búsqueda por nombre de usuario
-    // Este useEffect ahora solo se encarga de llamar a fetchUsuarios cuando el filtro debounced cambia.
-    // La lógica de debouncing en sí está encapsulada en useDebounce.
-    useEffect(() => {
-        // Cuando el filtro debounced cambia, resetear a la primera página
-        // Esto es importante para que la búsqueda comience desde el inicio de los resultados.
-        setCurrentPage(1);
-        // Llama a fetchUsuarios para obtener los datos con el nuevo filtro y página.
-        // Se llama directamente aquí porque debouncedNombreFilter ya tiene el retardo.
-        // No necesitamos un setTimeout aquí.
-        fetchUsuarios();
-    }, [debouncedNombreFilter]); // Dependencia: el valor debounced
-
     // useCallback para memorizar fetchUsuarios y evitar recreaciones innecesarias
     const fetchUsuarios = useCallback(async () => {
         setLoading(true);
@@ -65,13 +52,16 @@ const UsuariosListPage = () => {
         }
     }, [debouncedNombreFilter, currentPage, itemsPerPage]); // Dependencias: filtro debounced, página y elementos por página
 
-    // useEffect para cargar usuarios cuando el componente se monta o cuando la página cambia
-    // (el debouncedNombreFilter ya tiene su propio useEffect que llama a fetchUsuarios)
+    // Efecto para resetear la página cuando el filtro cambia.
     useEffect(() => {
-        // Este useEffect se encargará de recargar los usuarios solo cuando la página cambie,
-        // ya que el cambio de filtro ya lo maneja el useEffect de debouncedNombreFilter.
+        setCurrentPage(1);
+    }, [debouncedNombreFilter]);
+
+    // Efecto unificado para cargar los datos.
+    // Se ejecuta al montar el componente y cada vez que cambian sus dependencias.
+    useEffect(() => {
         fetchUsuarios();
-    }, [currentPage, fetchUsuarios]); // Dependencia: currentPage y la función fetchUsuarios (memorizada)
+    }, [currentPage, fetchUsuarios]); // Dependencias: la página actual y la función fetchUsuarios (que ya depende del filtro)
 
 
     const handlePageChange = (newPage) => {
