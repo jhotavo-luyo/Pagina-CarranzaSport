@@ -48,7 +48,7 @@ export const getAllUsuarios = async (nombre = '', page = 1, limit = 10) => {
 
     if (nombre) {
         // params.append('BuscarUsuario', nombre); // Usa el parámetro de búsqueda de tu backend
-        params.append('search', nombre); // CORREGIDO: Usa el parámetro 'search' que espera el backend
+        params.append('BuscarUsuario', nombre); // CORREGIDO: Usa el parámetro 'search(he me euivoque haci que es BuscarUsuario)' que espera el backend
     }
     // Añade parámetros de paginación
     params.append('page', page);
