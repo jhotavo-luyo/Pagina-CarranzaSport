@@ -2,6 +2,8 @@
 // Este componente maneja la interfaz de inicio de sesión, ahora con integración de API.
 import React, { useState } from 'react';
 import { loginUser } from '../../api/newsApi'; // Importa la función de login
+import { Link } from 'react-router-dom';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 const LoginPage = ({ onLoginSuccess }) => {
     const [identificador, setIdentificador] = useState('');
@@ -20,7 +22,7 @@ const LoginPage = ({ onLoginSuccess }) => {
             const data = await loginUser(identificador, password);
 
             // Llama a la función del padre (en App.jsx) y le pasa el token.
-            onLoginSuccess(data.token); 
+            onLoginSuccess(data.token);
         } catch (err) {
             setError(err.message || 'Error en el login. Verifica tus credenciales.');
             console.error('Error en el login:', err);
@@ -31,7 +33,11 @@ const LoginPage = ({ onLoginSuccess }) => {
 
     return (
         <div className="flex items-center justify-center min-h-screen  px-4 bg-black animate-radial-move">
-            <div className="bg-[#ffffff5d] p-8 rounded-xl shadow-2xl w-full max-w-md transform transition-transform duration-300 hover:scale-101">
+            
+            <div className="bg-[#ffffff5d] p-8 rounded-xl shadow-2xl w-full max-w-md transform transition-transform duration-300 hover:scale-101 relative">
+                <Link to="/" className="absolute top-2 left-2 font-semibold  opacity-90  px-4 py-3 rounded-xl bg-[#00000041] ">
+                <ArrowLeftIcon className='  size-4  text-white '/>
+                </Link>
                 <h2 className="text-4xl font-bold text-center text-primary mb-8">Iniciar Sesión</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
