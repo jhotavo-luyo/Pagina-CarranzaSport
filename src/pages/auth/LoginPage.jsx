@@ -31,7 +31,7 @@ const LoginPage = ({ onLoginSuccess }) => {
 
     return (
         <div className="flex items-center justify-center min-h-screen  px-4">
-            <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md transform transition-transform duration-300 hover:scale-105">
+            <div className="bg-black p-8 rounded-xl shadow-2xl w-full max-w-md transform transition-transform duration-300 hover:scale-105">
                 <h2 className="text-4xl font-bold text-center text-primary mb-8">Iniciar Sesión</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
@@ -80,9 +80,9 @@ const LoginPage = ({ onLoginSuccess }) => {
                     >
                         {loading ? 'Ingresando...' : 'Ingresar'}
                     </button>
-                    <p className="text-center text-gray-600 text-sm mt-4">
+                    {/* <p className="text-center text-gray-600 text-sm mt-4">
                         ¿Olvidaste tu contraseña? <a href="#" className="text-orange-500 hover:underline">Recuperar</a>
-                    </p>
+                    </p> */}
                 </form>
             </div>
         </div>
