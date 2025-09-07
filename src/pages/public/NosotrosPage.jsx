@@ -8,7 +8,7 @@ const teamMembers = [
         name: 'Joni Carranza',
         role: 'Fundador y Mecánico Jefe',
         bio: 'Con más de 13 años de experiencia, Juan fundó el taller con la visión de ofrecer un servicio honesto y de la más alta calidad.',
-        imageUrl: 'https://images.pexels.com/photos/842545/pexels-photo-842545.jpeg?auto=compress&cs=tinysrgb&w=600',
+        imageUrl: 'https://www.shutterstock.com/image-vector/man-icon-260nw-569903467.jpg',
     },
     {
         name: 'Ana Sofía',
