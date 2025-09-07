@@ -30,12 +30,12 @@ const LoginPage = ({ onLoginSuccess }) => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen  px-4">
-            <div className="bg-black p-8 rounded-xl shadow-2xl w-full max-w-md transform transition-transform duration-300 hover:scale-105">
+        <div className="flex items-center justify-center min-h-screen  px-4 bg-black animate-radial-move">
+            <div className="bg-[#ffffff5d] p-8 rounded-xl shadow-2xl w-full max-w-md transform transition-transform duration-300 hover:scale-101">
                 <h2 className="text-4xl font-bold text-center text-primary mb-8">Iniciar Sesión</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                        <label htmlFor="identificador" className="block text-gray-700 text-lg font-semibold mb-2">
+                        <label htmlFor="identificador" className="block text-black  text-lg font-semibold mb-2">
                             Usuario o Correo Electrónico
                         </label>
                         <input
@@ -46,12 +46,12 @@ const LoginPage = ({ onLoginSuccess }) => {
                             value={identificador}
                             onChange={(e) => setIdentificador(e.target.value)}
                             required
-                            className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800"
+                            className="w-full px-5 py-3 border border-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent text-gray-900"
                             disabled={loading}
                         />
                     </div>
                     <div>
-                        <label htmlFor="password" className="block text-gray-700 text-lg font-semibold mb-2">
+                        <label htmlFor="password" className="block text-black text-lg font-semibold mb-2">
                             Contraseña
                         </label>
                         <input
@@ -62,7 +62,7 @@ const LoginPage = ({ onLoginSuccess }) => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800"
+                            className="w-full px-5 py-3 border border-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent text-gray-900"
                             disabled={loading}
                         />
                     </div>
@@ -75,7 +75,7 @@ const LoginPage = ({ onLoginSuccess }) => {
 
                     <button
                         type="submit"
-                        className="w-full bg-orange-500 text-white text-xl font-bold py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-75"
+                        className="w-full bg-orange-500/70 text-white text-xl font-bold py-3 rounded-lg shadow-md hover:bg-orange-600/80 transition duration-300 transform hover:scale-102 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-75"
                         disabled={loading} // Deshabilita el botón mientras carga
                     >
                         {loading ? 'Ingresando...' : 'Ingresar'}
