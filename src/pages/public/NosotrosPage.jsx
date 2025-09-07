@@ -5,9 +5,9 @@ import { HeartIcon, ShieldCheckIcon, CalendarDaysIcon, WrenchScrewdriverIcon, Fl
 // --- Datos del Equipo (Simulados) ---
 const teamMembers = [
     {
-        name: 'Juan Carranza',
+        name: 'Joni Carranza',
         role: 'Fundador y Mecánico Jefe',
-        bio: 'Con más de 20 años de experiencia, Juan fundó el taller con la visión de ofrecer un servicio honesto y de la más alta calidad.',
+        bio: 'Con más de 13 años de experiencia, Juan fundó el taller con la visión de ofrecer un servicio honesto y de la más alta calidad.',
         imageUrl: 'https://images.pexels.com/photos/842545/pexels-photo-842545.jpeg?auto=compress&cs=tinysrgb&w=600',
     },
     {
@@ -324,7 +324,7 @@ const NosotrosPage = () => {
             </section>
 
             {/* --- Sección de Transformaciones (Antes y Después) --- */}
-            <section className="bg-gray-900 py-16 sm:py-24">
+            {/* <section className="bg-gray-900 py-16 sm:py-24">
                 <div className="container mx-auto px-4 sm:px-8">
                     <div className="max-w-3xl mx-auto text-center mb-16">
                         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Transformaciones: Antes y Después</h2>
@@ -345,7 +345,7 @@ const NosotrosPage = () => {
                         <p className="text-gray-300">{transformationProjects[currentProjectIndex].description}</p>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* --- Sección del Equipo --- */}
             <section className="container mx-auto px-4 sm:px-8 py-16 sm:py-24">
