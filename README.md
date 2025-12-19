@@ -78,10 +78,10 @@ Sigue estos pasos para levantar el proyecto en tu entorno local.
 
 
 
-```
+## extras
 📝 Notas de Desarrollo
 Esta sección contiene una serie de comandos y notas utilizadas durante la configuración inicial del proyecto.
-```
+
 **Creación del proyecto:**
 ```bash
 # Creamos el proyecto con Vite
