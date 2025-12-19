@@ -12,7 +12,7 @@ const Star = ({ filled }) => (
 const Rating = ({ rating }) => {
     const totalStars = 5;
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center w-20 sm:w-50 gap-1 m-auto ">
             {[...Array(totalStars)].map((_, index) => (
                 <Star key={index} filled={index < rating} />
             ))}
@@ -46,11 +46,13 @@ const TestimonialCard = ({ testimonio, position, total }) => {
             className="absolute w-full h-full p-8 transition-all duration-500 ease-in-out"
             style={getCardStyle()}
         >
-            <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-full flex flex-col justify-center items-center text-center shadow-2xl overflow-hidden">
-                <p className="text-gray-300 italic mb-4 text-lg line-clamp-4">"{testimonio.comentario}"</p>
-                <div className="mt-auto pt-4">
+            <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-5 sm:p-7 h-full flex flex-col justify-between items-center text-center shadow-2xl overflow-hidden">
+                <div className='grow-5 sm:grow-5 '>
+                    <p className="text-gray-300 italic h-full text-sm sm:text-base line-clamp-4 mask-b-from-80% mask-b-to-95% ">"{testimonio.comentario}"</p>
+                </div>
+                <div className=" grow-0 sm:grow-2 pt-2">
                     <Rating rating={testimonio.calificacion} />
-                    <h4 className="text-white font-bold mt-3 text-xl">{testimonio.nombre_cliente}</h4>
+                    <h4 className="text-white font-bold  mt-3 text-sm sm:text-xl">{testimonio.nombre_cliente}</h4>
                 </div>
             </div>
         </div>

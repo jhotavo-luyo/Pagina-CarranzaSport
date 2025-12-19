@@ -1,7 +1,7 @@
 // src/pages/public/HomePage.jsx
 // Este componente representa la página de inicio o dashboard principal para el usuario final.
 // Está en 'pages/public' porque es una vista accesible para todos los visitantes del sitio.
-import React, { useRef, useState, useEffect } from 'react'; // eslint-disable-line no-unused-vars
+import React, { useRef, useState, useEffect } from 'react'; 
 import { toast } from 'react-toastify';
 import ReactDOM from 'react-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'; // Importamos nuestro hook personalizado
@@ -206,11 +206,11 @@ const HomePage = () => {
         startOrientation: { yaw: 0, pitch: 0, roll: 0 },
         endOrientation: { yaw: 0, pitch: 0, roll: 360 },
         startOrbit: { radius: 450 }, // CORRECCIÓN 1: Ajustar el zoom inicial a un valor visible.
-        endOrbit: { radius: 120 },   // Zoom final (un radio menor acerca la cámara)
+        endOrbit: { radius: 250 },   // Zoom final (un radio menor acerca la cámara)
         startExposure: -20,
         endExposure: 0,
         startTranslateX: 0,
-        endTranslateX: 10,
+        endTranslateX: 5,
     };
 
     const modelViewerRef = useRef(null);
@@ -322,7 +322,7 @@ const HomePage = () => {
         contactSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     return (
-        <div className="p-4 sm:p-6 lg:p-8 bg-black text-white shadow-2xl min-h-screen animate-radial-move overflow-hidden ">
+        <div className="p-2 sm:p-6 lg:p-8 bg-black text-white shadow-2xl min-h-screen animate-radial-move overflow-hidden ">
             <>
                 <title>Motosport Carranza - Taller y Repuestos para Motos</title>
                 <meta name="description" content="Bienvenido a Motosport Carranza. Ofrecemos mantenimiento experto, repuestos de alta calidad y las mejores promociones para tu moto. ¡Contáctanos!" />

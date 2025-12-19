@@ -7,7 +7,7 @@ const teamMembers = [
     {
         name: 'Joni Carranza',
         role: 'Fundador y Mecánico Jefe',
-        bio: 'Con más de 13 años de experiencia, Juan fundó el taller con la visión de ofrecer un servicio honesto y de la más alta calidad.',
+        bio: 'Con más de 13 años de experiencia, Joni fundó el taller con la visión de ofrecer un servicio honesto y de la más alta calidad.',
         imageUrl: 'https://www.shutterstock.com/image-vector/man-icon-260nw-569903467.jpg',
     },
     {
@@ -141,26 +141,26 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => (
 );
 
 // --- Datos para la sección de Transformaciones ---
-const transformationProjects = [
-    {
-        title: 'Restauración Clásica: Honda CB750',
-        description: 'Devolvimos a la vida esta joya de los 70. Se realizó una reconstrucción completa del motor, un nuevo trabajo de pintura y se restauraron todos los cromados a su esplendor original.',
-        beforeSrc: 'https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        afterSrc: 'https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    },
-    {
-        title: 'Reparación de Siniestro: Yamaha R6',
-        description: 'Esta R6 llegó con daños significativos en el chasis y carenado. Nuestro equipo realizó una alineación precisa del chasis y una reconstrucción de la fibra de vidrio, dejándola lista para la pista de nuevo.',
-        beforeSrc: 'https://images.pexels.com/photos/2167143/pexels-photo-2167143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        afterSrc: 'https://images.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    },
-    {
-        title: 'Customización Scrambler: BMW R80',
-        description: 'Transformamos una BMW R80 estándar en una Scrambler única. Se modificó el subchasis, se instaló un asiento a medida, llantas de tacos y un escape artesanal para un look agresivo y funcional.',
-        beforeSrc: 'https://images.pexels.com/photos/1705097/pexels-photo-1705097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        afterSrc: 'https://images.pexels.com/photos/257997/pexels-photo-257997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    },
-];
+// const transformationProjects = [
+//     {
+//         title: 'Restauración Clásica: Honda CB750',
+//         description: 'Devolvimos a la vida esta joya de los 70. Se realizó una reconstrucción completa del motor, un nuevo trabajo de pintura y se restauraron todos los cromados a su esplendor original.',
+//         beforeSrc: 'https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+//         afterSrc: 'https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+//     },
+//     {
+//         title: 'Reparación de Siniestro: Yamaha R6',
+//         description: 'Esta R6 llegó con daños significativos en el chasis y carenado. Nuestro equipo realizó una alineación precisa del chasis y una reconstrucción de la fibra de vidrio, dejándola lista para la pista de nuevo.',
+//         beforeSrc: 'https://images.pexels.com/photos/2167143/pexels-photo-2167143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+//         afterSrc: 'https://images.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+//     },
+//     {
+//         title: 'Customización Scrambler: BMW R80',
+//         description: 'Transformamos una BMW R80 estándar en una Scrambler única. Se modificó el subchasis, se instaló un asiento a medida, llantas de tacos y un escape artesanal para un look agresivo y funcional.',
+//         beforeSrc: 'https://images.pexels.com/photos/1705097/pexels-photo-1705097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+//         afterSrc: 'https://images.pexels.com/photos/257997/pexels-photo-257997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+//     },
+// ];
 
 // --- Componente Interactivo Antes y Después ---
 const BeforeAfterSlider = ({ beforeSrc, afterSrc }) => {
@@ -204,19 +204,19 @@ const BeforeAfterSlider = ({ beforeSrc, afterSrc }) => {
 
 const NosotrosPage = () => {
     const [openFaqIndex, setOpenFaqIndex] = useState(null);
-    const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+    // const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
     const handleFaqClick = (index) => {
         setOpenFaqIndex(openFaqIndex === index ? null : index);
     };
+// Es parte del antes y despues
+    // const handlePrevProject = () => {
+    //     setCurrentProjectIndex(prev => (prev === 0 ? transformationProjects.length - 1 : prev - 1));
+    // };
 
-    const handlePrevProject = () => {
-        setCurrentProjectIndex(prev => (prev === 0 ? transformationProjects.length - 1 : prev - 1));
-    };
-
-    const handleNextProject = () => {
-        setCurrentProjectIndex(prev => (prev === transformationProjects.length - 1 ? 0 : prev + 1));
-    };
+    // const handleNextProject = () => {
+    //     setCurrentProjectIndex(prev => (prev === transformationProjects.length - 1 ? 0 : prev + 1));
+    // };
 
     return (
         <div className="bg-black text-white min-h-screen animate-radial-move overflow-x-hidden">
@@ -323,7 +323,7 @@ const NosotrosPage = () => {
                 </div>
             </section>
 
-            {/* --- Sección de Transformaciones (Antes y Después) --- */}
+            {/* --- Sección de Transformaciones (Antes y Después) en proximas actualizaciones--- */}
             {/* <section className="bg-gray-900 py-16 sm:py-24">
                 <div className="container mx-auto px-4 sm:px-8">
                     <div className="max-w-3xl mx-auto text-center mb-16">

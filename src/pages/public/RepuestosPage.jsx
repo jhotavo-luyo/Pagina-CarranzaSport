@@ -33,6 +33,8 @@ const getVideoEmbedUrl = (url) => {
         // Aquí se podrían añadir más proveedores como Vimeo
         return url; // Devuelve la URL original si no es de un proveedor conocido
     } catch (e) {
+        // no crep que sea necesario un console.log(e);
+        // para evitar gastar recursos
         return null; // URL inválida
     }
 };
@@ -304,7 +306,7 @@ const RepuestosPage = () => {
     }, []); // Dependencia vacía para que se ejecute solo al montar
 
     // --- Lógica del Embudo de Conversión ---
-    const handleOpenContactModal = (repuesto) => {
+    const handleOpenContactModal = () => {
         // No es necesario cerrar el modal de detalles, el de contacto se superpondrá.
         // setSelectedRepuesto ya está seteado.
         setIsContactModalOpen(true);
@@ -319,7 +321,7 @@ const RepuestosPage = () => {
         await createPublicaSolicitud(solicitudData);
 
         // 2. Construir y abrir enlace de WhatsApp
-        const numeroWhatsApp = '916703204'; // ¡¡¡REEMPLAZAR CON EL NÚMERO REAL!!!
+        const numeroWhatsApp = '970845315'; // ¡¡¡REEMPLAZAR CON EL NÚMERO DE LA EMPRESA!!!
         const mensajeWhatsApp = encodeURIComponent(
             `Hola, acabo de enviar mis datos por la web. Estoy interesado en el repuesto: *${selectedRepuesto.nombre_repuesto}* (SKU: ${selectedRepuesto.codigo_sku || 'N/A'}). Mi nombre es ${formData.nombre_completo}.`
         );

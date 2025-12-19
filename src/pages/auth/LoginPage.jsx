@@ -91,6 +91,9 @@ const LoginPage = ({ onLoginSuccess }) => {
                     </p> */}
                 </form>
             </div>
+            {/* esto es para el home para redes en este link   --> https://uiverse.io/csozidev/lovely-husky-50     */}
+            {/* este es para el loading -->     https://uiverse.io/faelpatrick/ugly-fish-32 */}
+
         </div>
     );
 };

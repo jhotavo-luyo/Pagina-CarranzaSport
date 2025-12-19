@@ -34,8 +34,9 @@ const getVideoEmbedUrl = (url) => {
         // Aquí se podrían añadir más proveedores como Vimeo
         return url; // Devuelve la URL original si no es de un proveedor conocido
     } catch (e) {
-        // No es necesario un console.error aquí, ya que puede ser una URL de otro tipo.
-        return null; // URL inválida o no reconocida
+        // console.log(e);
+        // innecesario un console.error aquí, ya que puede ser una URL de otro tipo.
+        return null; // URL invalida o no reconocida
     }
 };
 
@@ -178,7 +179,8 @@ const ServiceModal = ({ servicio, onClose, onContact }) => {
 // --- Componente de Tarjeta de Servicio ---
 const ServiceCard = ({ servicio, onCardClick }) => {
     return (
-        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg group transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer" onClick={() => onCardClick(servicio)}>
+        // hover:inset-shadow-[1px_5px_18px_rgba(8,5,8,0.2)] 
+        <div className=" bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg group transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer" onClick={() => onCardClick(servicio)}>
             <div className="relative">
                 <img className="w-full h-48 object-cover" src={servicio.imagen_principal_url || 'https://placehold.co/400x300/1a202c/FFFFFF?text=Servicio'} alt={servicio.nombre_servicio} />
                 <div className="absolute top-2 right-2 text-white text-xs font-bold py-1 px-2 rounded-full bg-blue-500 capitalize">
@@ -189,7 +191,7 @@ const ServiceCard = ({ servicio, onCardClick }) => {
                 <h3 className="text-lg font-bold text-white mb-2 h-14 group-hover:text-blue-400 transition-colors">{servicio.nombre_servicio}</h3>
                 <p className="text-gray-400 text-sm mb-3 h-20 overflow-hidden line-clamp-4">{servicio.descripcion}</p>
                 <p className="text-lg font-semibold text-green-400 mb-4">Desde {formatCurrency(servicio.precio_referencia)}</p>
-                <button className="w-full bg-gray-700 text-white font-semibold py-2 rounded-lg group-hover:bg-blue-500 transition-colors">
+                <button className="w-full bg-gray-700 text-white font-semibold py-2 rounded-lg group-hover:bg-blue-500 transition-colors ">
                     Ver Más Información
                 </button>
             </div>
@@ -274,7 +276,7 @@ const ServiciosPage = () =>{
     }, []);
 
     // --- Lógica del Embudo de Conversión ---
-    const handleOpenContactModal = (servicio) => {
+    const handleOpenContactModal = () => {
         // No es necesario cerrar el modal de detalles, el de contacto se superpondrá.
         // setSelectedServicio ya está seteado.
         setIsContactModalOpen(true);
@@ -289,7 +291,7 @@ const ServiciosPage = () =>{
         await createPublicaSolicitud(solicitudData);
 
         // 2. Construir y abrir enlace de WhatsApp
-        const numeroWhatsApp = '916703204'; // ¡¡¡REEMPLAZAR CON EL NÚMERO REAL!!!
+        const numeroWhatsApp = '970845315'; // ¡¡¡REEMPLAZAR CON EL NUMERO REAL DE LA EMPRESA!!!
         const mensajeWhatsApp = encodeURIComponent(
             `Hola, acabo de enviar mis datos por la web para agendar una cita para el servicio: *${selectedServicio.nombre_servicio}*. Mi nombre es ${formData.nombre_completo}.`
         );
@@ -314,7 +316,7 @@ const ServiciosPage = () =>{
                 </header>
 
                 {/* --- Barra de Búsqueda y Filtros --- */}
-                <div className="mb-8 p-4 bg-gray-900 rounded-lg shadow-md flex flex-col md:flex-row gap-4 items-center">
+                <div className="mb-8 p-4 rounded-lg shadow-md flex flex-col md:flex-row gap-4 items-center">
                     <div className="relative flex-grow w-full md:w-auto">
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3"><MagnifyingGlassIcon className="h-5 w-5 text-gray-500" /></span>
                         <input type="text" placeholder="Buscar servicio..." value={tempSearchTerm} onChange={(e) => setTempSearchTerm(e.target.value)} className="w-full p-3 pl-10 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
