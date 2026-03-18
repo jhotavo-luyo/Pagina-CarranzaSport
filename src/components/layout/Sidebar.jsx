@@ -120,7 +120,7 @@ const Sidebar = ({ isOpen, onClose, onMouseEnter }) => {
                 {/* Cabecera del Sidebar: contiene el logo y el nombre/rol. */}
                 <div className="w-[80%] m-auto flex items-center justify-evenly  h-16 border-b border-orange-500">
                     <Link to="/dashboard" className="flex items-center ">
-                        <img src="/fondo.jpg" alt="Logo" className="h-10 w-10 rounded-full flex-shrink-0" />
+                        <img src="/logo.png" alt="Logo" className="h-10 w-10 rounded-full flex-shrink-0" />
                     </Link>
                         {/* Contenedor para el texto que aparece y desaparece con una transición suave. */}
                         <div className={`flex flex-col overflow-hidden transition-opacity duration-200 ${isOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>

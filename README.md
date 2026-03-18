@@ -44,7 +44,7 @@ Sigue estos pasos para levantar el proyecto en tu entorno local.
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone <URL_DEL_REPOSITORIO>
+    git clone https://github.com/jhotavo-luyo/Pagina-CarranzaSport.git
     cd Frontend-CarranzaSport-final
     ```
 
